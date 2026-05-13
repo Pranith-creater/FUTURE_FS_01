@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "buildCommand": "echo 'No build step needed'",
+  "installCommand": "npm install",
+  "functions": {
+    "api/contact.js": {
+      "memory": 512,
+      "maxDuration": 10
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/$1"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/public/$1"
+    }
+  ]
+}
